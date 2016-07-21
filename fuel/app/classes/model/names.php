@@ -28,9 +28,11 @@ class Names extends \Model {
         
         if($dupes) {
             
-            $sql .= " GROUP BY `first_name`, `last_name`";
+            $sql .= " GROUP BY `first_name`, `last_name` ";
             
         }
+        
+        $sql .= "ORDER BY `last_name`, `first_name`";
                 
         /*
          * Run query and return results
