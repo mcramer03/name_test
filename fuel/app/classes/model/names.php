@@ -20,7 +20,7 @@ class Names extends \Model {
          * Using full SQL with binding, rather than ORM methods, to prove knowledge of MySQL :)
          */
                     
-        $sql = "SELECT `names`.* FROM `names` WHERE MATCH(`first_name`, `last_name`) AGAINST (:search_term) AND CONCAT(first_name, ' ', last_name) LIKE :search_term_like";
+        $sql = "SELECT `names`.* FROM `names` WHERE MATCH(`first_name`, `last_name`) AGAINST (:search_term IN BOOLEAN MODE) AND CONCAT(first_name, ' ', last_name) LIKE :search_term_like";
             
         /*
          * Remove duplicates if needed by grouping results by first/last name
