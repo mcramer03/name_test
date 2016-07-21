@@ -1,5 +1,7 @@
 <?php
 
+use \Model\Names;
+
 class Test_Model_Names extends TestCase
 {
     
