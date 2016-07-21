@@ -4,7 +4,7 @@ Name test is a single page website allowing full text searching of names. This s
 
 ## Live Demo
 
-A live demo is available here: http://ec2-52-208-192-29.eu-west-1.compute.amazonaws.com/
+A live demo is available here: http://mikecramer.tk/
 
 ## Installation
 
@@ -34,7 +34,16 @@ The front end demo enables you to call the web service conveniently and see the 
 
 Asside from using the web service's search functionality, you can also enable "instant search" to pull the entire result set from the database, and instantly search through the results using a full text javascript library.
 
+## Frontend compilation
 
+Grunt is used to join multiple files from a directory tree before creating a single public javascript and css file for use by the front end. This not only makes code easier to follow and, especially on larger projects, keeps things organised. But also allows for a single javascript / css file to be created, potentially saving on browser requests and bandwidth, making your website quicker and server load lower.
 
+## Unit testing
 
-unit testing: http://prntscr.com/bvpfve
+Unit testing has been integrated using FuelPHP Oil and PHPunit. Test results can be found here: http://prntscr.com/bvpfve
+
+On such a small project there is not much to test but tests have been set up to check that the results from the "search" and "get_names" methods of the model "names" actually return records.
+
+Although this is a small project with not much to go wrong, automated unit testing is still an essential part of development especially as your project and development team start to grow.
+
+Unit testing could be combined nicely with integration testing, especially in the case of web services / APIs, to include testing the controllers of the application, ensuring 100% code coverage.
