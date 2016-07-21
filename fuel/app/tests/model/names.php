@@ -17,9 +17,7 @@ class Test_Model_Names extends TestCase
         $names = Names::find_names("simon roberts", false);
         
         $count = count($names);
-        
-        $this->assertEquals($count, 0);
-        
+                
         $this->assertGreaterThan(0, $count, "Search returned no entries");
                         
         $names = Names::find_names("simon roberts", true);
